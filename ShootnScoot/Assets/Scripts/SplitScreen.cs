@@ -9,6 +9,8 @@ public class SplitScreen : MonoBehaviour {
 	public Transform player1;
 	public Transform player2;
 
+    public GameObject canvas;
+
 	//The distance at which the splitscreen will be activated.
 	public float splitDistance = 5;
 
@@ -64,12 +66,14 @@ public class SplitScreen : MonoBehaviour {
 			camera2.transform.position = Vector3.Lerp(camera2.transform.position,midPoint2,Time.deltaTime*5);
             camera1.GetComponent<Camera>().rect = new Rect(0, 0, .5f, 1);
             camera2.GetComponent<Camera>().rect = new Rect(.5f, 0, .5f, 1);
+            canvas.SetActive(true);
 
         }
         else
         {
             //Deactivates the splitter and camera once the distance is less than the splitting distance (assuming it was at one point).
             camera1.GetComponent<Camera>().rect = new Rect(0, 0, Mathf.Lerp(start, end, t),1);
+            canvas.SetActive(false);
             t += 1f * Time.deltaTime;
             if(t > 1.0f)
             {
