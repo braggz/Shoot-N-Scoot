@@ -45,15 +45,10 @@ public class DistanceBars : MonoBehaviour
         p1Slider.fillAmount = distanceTillGoalForP1 / distanceForP1;
         p2Slider.fillAmount = distanceTillGoalForP2 / distanceForP2;
 
-        Debug.Log(p1Slider.rectTransform.rect.width * p1Slider.transform.localScale.x);
         particle1TravelDistance = -(p1Slider.rectTransform.rect.width * p1Slider.transform.localScale.x * p1Slider.fillAmount);
         p1Particle.transform.position = new Vector2(particle1OriginalPosition.x + particle1TravelDistance, particle1OriginalPosition.y);
 
         particle2TravelDistance = (p2Slider.rectTransform.rect.width * p2Slider.transform.localScale.x * p2Slider.fillAmount);
         p2Particle.transform.position = new Vector2(particle2OriginalPosition.x + particle2TravelDistance, particle2OriginalPosition.y);
-
-
-        Debug.Log(distanceTillGoalForP1);
-        Debug.Log(distanceTillGoalForP2);
     }
 }
