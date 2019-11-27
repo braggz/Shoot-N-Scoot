@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9166859939908253831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8719135581420227963}
+  - component: {fileID: 4728819522900149694}
+  m_Layer: 0
+  m_Name: Perks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8719135581420227963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166859939908253831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 223.65042, y: 134.73251, z: -86.02824}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4728819522900149694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166859939908253831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d9e90648d2196438761daf13e9b5fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player1RunSpeed: 1
+  Player1JumpSpeed: 300
+  Player1ReloadSpeed: 1
+  Player2RunSpeed: 1
+  Player2JumpSpeed: 1
+  Player2ReloadSpeed: 0.5
+  test1: {fileID: 6705792702143298632, guid: 0465f5e108f5e2b4e9308389f606fe65, type: 3}
+  test2: {fileID: 3636195999574364412, guid: f318460b2f803e14790884f79c7a4a42, type: 3}
+  test3: {fileID: 1078205004580642245, guid: a14d82fec49696d449657362b7ad63fc, type: 3}
