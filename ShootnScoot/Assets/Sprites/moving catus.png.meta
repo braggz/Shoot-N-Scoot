@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5a348ee1884b58d4eb19ec4e4f73dc2d
+guid: 20abedac9fe10654e87a6d6fff46baa0
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -106,7 +106,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81a47ec041193474aa070ad68e73e2a4
+      spriteID: a05c1a341f79bd84bbb27b627d9d403c
       internalID: 8527419596197007901
       vertices: []
       indices: 
@@ -127,7 +127,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f89720d3dfdb61043abd190deb241d0a
+      spriteID: 49e7fbe267070404c99991ec11a5655f
       internalID: 8965074144922884704
       vertices: []
       indices: 
