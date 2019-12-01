@@ -1,0 +1,463 @@
+fileFormatVersion: 2
+guid: 3ee3522701c9eb84b847d7e2b8d89bf1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2881119045026422517
+    second: Cowboy walking sprite_0
+  - first:
+      213: 5664756162377918786
+    second: Cowboy walking sprite_1
+  - first:
+      213: -1454293820241133752
+    second: Cowboy walking sprite_2
+  - first:
+      213: 8980299006331977026
+    second: Cowboy walking sprite_3
+  - first:
+      213: 6673256728901904761
+    second: Cowboy walking sprite_4
+  - first:
+      213: 3559806983685180243
+    second: Cowboy walking sprite_5
+  - first:
+      213: 2824604645501613668
+    second: Cowboy walking sprite_6
+  - first:
+      213: 3082430855863366290
+    second: Cowboy walking sprite_7
+  - first:
+      213: -7107690341196177908
+    second: Cowboy walking sprite_8
+  - first:
+      213: -1407896539124615083
+    second: Cowboy walking sprite_9
+  - first:
+      213: -169102788481432943
+    second: Cowboy walking sprite_10
+  - first:
+      213: -7251696436876065117
+    second: Cowboy walking sprite_11
+  - first:
+      213: 7387256548255178547
+    second: Cowboy walking sprite_12
+  - first:
+      213: -901243200880650129
+    second: Cowboy walking sprite_13
+  - first:
+      213: 3063011864141404740
+    second: Cowboy walking sprite_14
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cowboy walking sprite_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8287f3e9167d81489b32d3ba99efb20
+      internalID: -2881119045026422517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_1
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d36f775b89d05488340aacc24cfae3
+      internalID: 5664756162377918786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_2
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6442903993f42594a88d3036ad9fdb1e
+      internalID: -1454293820241133752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_3
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef2c385a863a2c4d9be822ad0118952
+      internalID: 8980299006331977026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_4
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43be1d604f24e9640a4c391ac68de6bc
+      internalID: 6673256728901904761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_5
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9285bbd3bc77e564f8a7fec14d62397a
+      internalID: 3559806983685180243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_6
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84eebc258de17be4a8a4ae0135439f07
+      internalID: 2824604645501613668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_7
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a745898ff719a304dae4b4ae828dd8d4
+      internalID: 3082430855863366290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_8
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e887d373c42fb4fbe80f7d2d6b7510
+      internalID: -7107690341196177908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_9
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dff25f5f37c1304ab5d90ba3d6ba494
+      internalID: -1407896539124615083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_10
+      rect:
+        serializedVersion: 2
+        x: 1942
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4cdf2500c167647a876d51061a7638
+      internalID: -169102788481432943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_11
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cd33c08d466aee4e87a6d031d20b954
+      internalID: -7251696436876065117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_12
+      rect:
+        serializedVersion: 2
+        x: 2326
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2391342433dbad04d80f91b693179a6b
+      internalID: 7387256548255178547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_13
+      rect:
+        serializedVersion: 2
+        x: 2518
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 780a3374b51eb1144b15f602407880db
+      internalID: -901243200880650129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cowboy walking sprite_14
+      rect:
+        serializedVersion: 2
+        x: 2710
+        y: 0
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 903d799f16ac8d84fa6e33eda8f86b79
+      internalID: 3063011864141404740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
