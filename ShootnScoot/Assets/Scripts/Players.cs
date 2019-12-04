@@ -78,11 +78,13 @@ public class Players : MonoBehaviour
         CanShoot = true;
         BulletLoaded = true;
         reloading = false;
+<<<<<<< HEAD
         hasWon = false;
        
+=======
 
         animator = GetComponent<Animator>();
-
+>>>>>>> master
 
     }
 
