@@ -123,7 +123,7 @@ public class Players : MonoBehaviour
             ChooseJump = false;
             jumping = false;
             InCover = true;
-            camera.transform.position = new Vector3(0, 0, -10);
+            
         }
 
         
@@ -179,29 +179,31 @@ public class Players : MonoBehaviour
             if (CoverPosition == 0)
             {
 
-
+                
                 CanShoot = false;
                 ChooseRun = true;
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
             }
             else if (CoverPosition == 1)
             {
                 ChooseRun = true;
                 CanShoot = false;
-
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
             }
             else if (CoverPosition <= 2)
             {
                 ChooseRun = true;
                 CanShoot = false;
-
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
             }
             else if (CoverPosition <= 3)
             {
                 CanShoot = false;
                 ChooseRun = true;
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
 
 
@@ -366,7 +368,7 @@ public class Players : MonoBehaviour
         if (ChooseRun && CoverPosition == 0)
         {
 
-
+           
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover1.transform.position, Speed); //moves the player towards a postion
 
             //this checks of the player has reached the next position
@@ -383,7 +385,7 @@ public class Players : MonoBehaviour
         //moving to cover 2
         if (ChooseRun && CoverPosition == 1)
         {
-
+            
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover2.transform.position, Speed);
 
 
@@ -400,7 +402,7 @@ public class Players : MonoBehaviour
         //moving to cover 3
         if (ChooseRun && CoverPosition == 2)
         {
-
+           
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover3.transform.position, Speed);
 
 
@@ -417,7 +419,7 @@ public class Players : MonoBehaviour
         //moving to cover 4
         if (ChooseRun && CoverPosition == 3)
         {
-
+            
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover4.transform.position, Speed);
 
 
