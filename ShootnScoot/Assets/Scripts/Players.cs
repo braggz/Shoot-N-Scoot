@@ -30,8 +30,8 @@ public class Players : MonoBehaviour
     public GameObject Jump3;
     public GameObject Jump4;
     public Camera camera;
-    public GameObject BlueWin;
-    public GameObject RedWin;
+    public bool hasWon;
+    
 
    
     public GameObject Player; //Tells who the player is
@@ -67,7 +67,7 @@ public class Players : MonoBehaviour
     private bool reloading;
     private bool muz; // keeps trakc if muzzle flash is active
     private bool muz2;
-    
+    private bool isPaused;
     private bool InCover; //Determines whether the player is in cover or not
     
     // Start is called before the first frame update
@@ -78,7 +78,7 @@ public class Players : MonoBehaviour
         CanShoot = true;
         BulletLoaded = true;
         reloading = false;
-         
+        hasWon = false;
        
 
     }
@@ -86,6 +86,15 @@ public class Players : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Player.gameObject.name == "Player 1")
+        {
+            isPaused = GetComponent<PauseMenuScript>().isPaused;
+            
+        }
+        else
+        {
+            isPaused = Enemy.GetComponent<PauseMenuScript>().isPaused;
+        }
 
         EnemyCover = Enemy.GetComponent<Players>().InCover; // checks if the enemy is in cover
         MuzzleFlashFunct(); //Function that handles muzzle flashes
@@ -163,7 +172,7 @@ public class Players : MonoBehaviour
         PlayerChoosesJump();
 
         //*************************This determines whether the character is able to move to the next cover position for running********************
-        if (Input.GetKeyDown(Run) && InCover == false && !reloading &&!ChooseJump)
+        if (Input.GetKeyDown(Run) && InCover == false && !reloading &&!ChooseJump && !isPaused)
         {
 
 
@@ -202,7 +211,7 @@ public class Players : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(Jump) && InCover == false && !reloading && !ChooseRun)
+        if (Input.GetKeyDown(Jump) && InCover == false && !reloading && !ChooseRun && !isPaused)
         {
 
 
@@ -241,13 +250,13 @@ public class Players : MonoBehaviour
         }
 
         //**********************This moves the player in and out of cover**************************************
-        if (Input.GetKeyDown(Peak) && InCover == true && CanShoot)
+        if (Input.GetKeyDown(Peak) && InCover == true && CanShoot && !isPaused)
         {
             Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y + .7f);
             InCover = false;
             // Debug.Log("test1");
         }
-        if (Input.GetKeyDown(Duck) && InCover == false && CanShoot)
+        if (Input.GetKeyDown(Duck) && InCover == false && CanShoot && !isPaused)
         {
             Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
             InCover = true;
@@ -256,7 +265,7 @@ public class Players : MonoBehaviour
         }
 
         rlt1 = Time.fixedTime;
-        if (Input.GetKeyDown(Reload) && InCover && !reloading)
+        if (Input.GetKeyDown(Reload) && InCover && !reloading && !isPaused && !BulletLoaded)
         {
             Debug.Log("reloading");
             reloading = true;
@@ -265,7 +274,7 @@ public class Players : MonoBehaviour
         }
 
 
-        else if ((rlt1 - rlt2) >= ReloadTime && reloading)
+        else if ((rlt1 - rlt2) >= ReloadTime && reloading &&!BulletLoaded)
         {
             Debug.Log("reloading complete");
             reloading = false;
@@ -324,7 +333,7 @@ public class Players : MonoBehaviour
     private void Aiming()
     {
         //***************************This handles whether the player is shooting high or low ****************************************************
-        if (Input.GetKeyDown(ShootLow) && InCover == false && CanShoot && BulletLoaded)
+        if (Input.GetKeyDown(ShootLow) && InCover == false && CanShoot && BulletLoaded &&!isPaused)
         {
 
             BulletLoaded = false;
@@ -332,7 +341,7 @@ public class Players : MonoBehaviour
             ShotLow = true;
             muz = true;
         }
-        if (Input.GetKeyDown(ShootHigh) && InCover == false && CanShoot && BulletLoaded)
+        if (Input.GetKeyDown(ShootHigh) && InCover == false && CanShoot && BulletLoaded &&!isPaused)
         {
             BulletLoaded = false;
             DeadTime2 = Time.fixedTime; //Starts the timer for the bullet 
@@ -414,17 +423,17 @@ public class Players : MonoBehaviour
 
             if (Player.transform.position.x == Cover4.transform.position.x && Player.transform.position.y == Cover4.transform.position.y)
             {
-                Enemy.transform.position = new Vector2(1000, 1000);
+               
                 // Player.transform.position = Winner.transform.position;
-
-                if (Player.gameObject.tag == "Player1")
+                hasWon = true;
+               /* if (Player.gameObject.tag == "Player 1")
                 {
-                    camera.transform.position = BlueWin.transform.position;
+                    hasWon = true;
                 }
                 else
                 {
-                    camera.transform.position = RedWin.transform.position;
-                }
+                    
+                }*/
                 InCover = true;
 
 
@@ -553,16 +562,17 @@ public class Players : MonoBehaviour
             //this checks of the player has reached the next position
             if (Player.transform.position.x == Cover4.transform.position.x && Player.transform.position.y == Cover4.transform.position.y)
             {
+                hasWon = true;
                 //reset varibales
-                if (Player.gameObject.tag == "Player1")
+                if (Player.gameObject.tag == "Player 1")
                 {
-                    camera.transform.position = BlueWin.transform.position;
+                    
                 }
                 else
                 {
-                    camera.transform.position = RedWin.transform.position;
+                    
                 }
-                Enemy.transform.position = new Vector2(1000, 1000);
+                
                 //Player.transform.position = Winner.transform.position;
                 InCover = true;
                 jumping = false;
