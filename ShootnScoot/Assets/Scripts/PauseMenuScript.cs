@@ -18,41 +18,33 @@ public class PauseMenuScript : MonoBehaviour
 
     void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            
             if (GameIsPaused)
             {
-                isPaused = false;
                 Resume();
-
-               
+                isPaused = true;
+                
             }
             else
             {
-                isPaused = true;
                 Pause();
-                
             }
         }
     }
 
     public void Resume()
     {
-        GameIsPaused = false;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        
+        GameIsPaused = false;
     }
 
     void Pause()
     {
-        GameIsPaused = true;
-        Debug.Log("test");
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        
+        GameIsPaused = true;
     }
 
     public void LoadLevelSelectMenu()
