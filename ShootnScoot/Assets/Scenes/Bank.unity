@@ -9290,6 +9290,7 @@ GameObject:
   - component: {fileID: 1276210464}
   - component: {fileID: 1276210463}
   - component: {fileID: 1276210462}
+  - component: {fileID: 1276210465}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Untagged
@@ -9376,10 +9377,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8111388468047903509, guid: 64c59bcd6a91af34eb70f064cd9f4f56,
-    type: 3}
+  m_Sprite: {fileID: 814952420425246774, guid: 58a2476957290fe47b4db4e9dddb6ab9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -9397,12 +9397,31 @@ Transform:
   m_GameObject: {fileID: 1276210461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 29.90506, y: -2.73, z: 0}
-  m_LocalScale: {x: 0.8974036, y: 0.8974036, z: 0.8974036}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 548963961}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1276210465
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276210461}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e13b3611a1b328146ae23b48b96269c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1287852329
 GameObject:
   m_ObjectHideFlags: 0
@@ -12470,7 +12489,7 @@ Transform:
   m_GameObject: {fileID: 2050617400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -29.96, y: -2.75, z: 0}
-  m_LocalScale: {x: 3.6447, y: 3.6447, z: 3.6447}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1735803190}
   m_Father: {fileID: 0}
@@ -12496,7 +12515,7 @@ MonoBehaviour:
   ShootHigh: 101
   ShootLow: 102
   Reload: 114
-  Speed: 0.01
+  Speed: 0.3
   Cover1: {fileID: 2132117985}
   Cover2: {fileID: 2077588204}
   Cover3: {fileID: 1504948710}

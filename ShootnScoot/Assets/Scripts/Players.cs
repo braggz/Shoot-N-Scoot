@@ -79,14 +79,52 @@ public class Players : MonoBehaviour
         BulletLoaded = true;
         reloading = false;
         hasWon = false;
-       
+        animator = GetComponent<Animator>();
 
     }
-   
+
+    private AnimationState animationState = AnimationState.NONE;
+    private Animator animator;
+
+    public enum AnimationState
+    {
+        NONE = 0,
+        IDLE = 1,
+        RUNNING = 2,
+        JUMP = 3
+    };
+
     // Update is called once per frame
     void Update()
     {
-        if(Player.gameObject.name == "Player 1")
+
+        switch (animationState)
+        {
+            case AnimationState.NONE:
+                animator.SetBool("isIdle", false);
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isJumping", false);
+                break;
+            case AnimationState.IDLE:
+                animator.SetBool("isIdle", true);
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isJumping", false);
+                break;
+            case AnimationState.RUNNING:
+                animator.SetBool("isIdle", false);
+                animator.SetBool("isRunning", true);
+                animator.SetBool("isJumping", false);
+                break;
+            case AnimationState.JUMP:
+                animator.SetBool("isIdle", false);
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isJumping", true);
+                break;
+            default:
+                break;
+        }
+
+        if (Player.gameObject.name == "Player 1")
         {
             isPaused = GetComponent<PauseMenuScript>().isPaused;
             
@@ -367,8 +405,8 @@ public class Players : MonoBehaviour
         //moving to cover 1
         if (ChooseRun && CoverPosition == 0)
         {
+            animationState = AnimationState.RUNNING;
 
-           
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover1.transform.position, Speed); //moves the player towards a postion
 
             //this checks of the player has reached the next position
@@ -379,13 +417,16 @@ public class Players : MonoBehaviour
                 ++CoverPosition;
                 CanShoot = true;
                 ChooseRun = false;
+                animationState = AnimationState.IDLE;
+
             }
 
         }
         //moving to cover 2
         if (ChooseRun && CoverPosition == 1)
         {
-            
+            animationState = AnimationState.RUNNING;
+
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover2.transform.position, Speed);
 
 
@@ -396,13 +437,16 @@ public class Players : MonoBehaviour
                 ++CoverPosition;
                 CanShoot = true;
                 ChooseRun = false;
+                animationState = AnimationState.IDLE;
+
             }
 
         }
         //moving to cover 3
         if (ChooseRun && CoverPosition == 2)
         {
-           
+            animationState = AnimationState.RUNNING;
+
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover3.transform.position, Speed);
 
 
@@ -413,13 +457,16 @@ public class Players : MonoBehaviour
                 ++CoverPosition;
                 CanShoot = true;
                 ChooseRun = false;
+                animationState = AnimationState.IDLE;
+
             }
 
         }
         //moving to cover 4
         if (ChooseRun && CoverPosition == 3)
         {
-            
+            animationState = AnimationState.RUNNING;
+
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover4.transform.position, Speed);
 
 
@@ -442,6 +489,8 @@ public class Players : MonoBehaviour
                 CanShoot = true;
 
                 ChooseRun = false;
+                animationState = AnimationState.IDLE;
+
 
             }
 
@@ -454,6 +503,8 @@ public class Players : MonoBehaviour
         {
             if (!jumping)
             {
+                animationState = AnimationState.JUMP;
+
                 Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump1.transform.position, Speed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump1.transform.position.x && Player.transform.position.y == Jump1.transform.position.y)
@@ -476,6 +527,9 @@ public class Players : MonoBehaviour
                 CanShoot = true;
                 ChooseJump = false;
                 jumping = false;
+
+                animationState = AnimationState.IDLE;
+
             }
 
         }
@@ -486,6 +540,8 @@ public class Players : MonoBehaviour
 
             if (!jumping)
             {
+                animationState = AnimationState.JUMP;
+
                 Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump2.transform.position, Speed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump2.transform.position.x && Player.transform.position.y == Jump2.transform.position.y)
@@ -508,6 +564,8 @@ public class Players : MonoBehaviour
                 CanShoot = true;
                 ChooseJump = false;
                 jumping = false;
+                animationState = AnimationState.IDLE;
+
             }
 
         }
@@ -517,6 +575,8 @@ public class Players : MonoBehaviour
 
             if (!jumping)
             {
+                animationState = AnimationState.JUMP;
+
                 Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump3.transform.position, Speed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump3.transform.position.x && Player.transform.position.y == Jump3.transform.position.y)
@@ -539,6 +599,8 @@ public class Players : MonoBehaviour
                 CanShoot = true;
                 ChooseJump = false;
                 jumping = false;
+                animationState = AnimationState.IDLE;
+
             }
 
         }
@@ -548,6 +610,8 @@ public class Players : MonoBehaviour
 
             if (!jumping)
             {
+                animationState = AnimationState.JUMP;
+
                 Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump4.transform.position, Speed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump4.transform.position.x && Player.transform.position.y == Jump4.transform.position.y)
@@ -582,6 +646,8 @@ public class Players : MonoBehaviour
                 CanShoot = true;
 
                 ChooseJump = false;
+                animationState = AnimationState.IDLE;
+
 
             }
 
