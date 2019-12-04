@@ -21,22 +21,22 @@ public class PlayerAnimation : MonoBehaviour
             case AnimationState.NONE:
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isRunning", false);
-                //animator.SetBool("isJumping", false);
+                animator.SetBool("isJumping", false);
                 break;
             case AnimationState.IDLE:
                 animator.SetBool("isIdle", true);
                 animator.SetBool("isRunning", false);
-                //animator.SetBool("isJumping", false);
+                animator.SetBool("isJumping", false);
                 break;
             case AnimationState.RUNNING:
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isRunning", true);
-                //animator.SetBool("isJumping", false);
+                animator.SetBool("isJumping", false);
                 break;
             case AnimationState.JUMP:
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isRunning", false);
-              //  animator.SetBool("isJumping", true);
+                animator.SetBool("isJumping", true);
                 break;
             default:
                 break;
