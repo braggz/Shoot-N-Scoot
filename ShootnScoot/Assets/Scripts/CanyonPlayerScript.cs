@@ -46,7 +46,8 @@ public class CanyonPlayerScript : MonoBehaviour
     public GameObject Enemy; // Tells who the enemy is
     public GameObject Winner; //The winners platform
     public GameObject Spawn; //Spawn point of players
-   
+    public ParticleSystem GunShot;
+    public ParticleSystem GunSmoke;
 
 
     private float MuzTime1; // Determines how long the muzzle flash should last
@@ -87,6 +88,11 @@ public class CanyonPlayerScript : MonoBehaviour
         reloading = false;
         hasWon = false;
         animator = GetComponent<Animator>();
+        
+        GunShot.Pause();
+       GunSmoke.Stop();
+        GunShot.Stop();
+        GunSmoke.Clear();
 
 
 
@@ -407,6 +413,8 @@ public class CanyonPlayerScript : MonoBehaviour
         if ((MuzTime1 - MuzTime2) > MuzzleFlashTime && muz2 == true)
         {
             animationState = AnimationState.IDLE;
+            GunShot.Stop();
+            GunSmoke.Stop();
             //MuzzleFlash.SetActive(false);
             bool HasShotP1 = (Player.gameObject.name == "Player 1" && ShotHigh); //This determine which player is shooting
             bool HasShotP2 = (Player.gameObject.name == "Player 2" && ShotHigh);
@@ -443,6 +451,9 @@ public class CanyonPlayerScript : MonoBehaviour
             ShotLow = true;
             muz = true;
             animationState = AnimationState.SHOOTLOW;
+            GunShot.Play();
+            GunSmoke.Play();
+            Debug.Log("test");
         }
         if (Input.GetKeyDown(ShootHigh) && InCover == false && CanShoot && BulletLoaded && !isPaused)
         {
@@ -452,6 +463,8 @@ public class CanyonPlayerScript : MonoBehaviour
 
             animationState = AnimationState.SHOOTLOW;
             muz = true;
+            GunShot.Play();
+            GunSmoke.Play();
         }
     }
 
