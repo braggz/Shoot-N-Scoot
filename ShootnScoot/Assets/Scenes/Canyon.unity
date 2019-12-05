@@ -2537,12 +2537,12 @@ PrefabInstance:
         type: 3}
       propertyPath: player1Start
       value: 
-      objectReference: {fileID: 678142413}
+      objectReference: {fileID: 0}
     - target: {fileID: 4360194803872921408, guid: 82a9ea4b0a9921f468ed154713cbf600,
         type: 3}
       propertyPath: player2Start
       value: 
-      objectReference: {fileID: 1703043131}
+      objectReference: {fileID: 0}
     - target: {fileID: 4360194803872921408, guid: 82a9ea4b0a9921f468ed154713cbf600,
         type: 3}
       propertyPath: endGoal
