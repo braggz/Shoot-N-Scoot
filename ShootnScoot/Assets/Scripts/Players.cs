@@ -32,7 +32,8 @@ public class Players : MonoBehaviour
     public GameObject Jump4;
     public Camera camera;
     public bool hasWon;
-    
+    public ParticleSystem GunShot;
+    public ParticleSystem GunSmoke;
 
    
     public GameObject Player; //Tells who the player is
@@ -81,6 +82,10 @@ public class Players : MonoBehaviour
         reloading = false;
         hasWon = false;
         animator = GetComponent<Animator>();
+        GunShot.Pause();
+        GunSmoke.Stop();
+        GunSmoke.Clear();
+      //  GunShot.Clear();
 
     }
 
@@ -386,8 +391,9 @@ public class Players : MonoBehaviour
         if (muz)
         {
 
-           // MuzzleFlash.SetActive(true);
-
+            // MuzzleFlash.SetActive(true);
+            GunShot.Stop();
+            GunSmoke.Stop();
             MuzTime2 = Time.fixedTime; //starts the timer that determines how much time has passed
             muz = false;
             muz2 = true;
@@ -434,15 +440,19 @@ public class Players : MonoBehaviour
             ShotLow = true;
             muz = true;
             animationState = AnimationState.SHOOTLOW;
+            GunShot.Play();
+            GunSmoke.Play();
             // animationState = AnimationState.IDLE;
             
         }
         if (Input.GetKeyDown(ShootHigh) && InCover == false && CanShoot && BulletLoaded &&!isPaused)
-        {
+        { 
             BulletLoaded = false;
             DeadTime2 = Time.fixedTime; //Starts the timer for the bullet 
             ShotHigh = true;
             animationState = AnimationState.SHOOTLOW;
+            GunShot.Play();
+            GunSmoke.Play();
 
             muz = true;
         }
