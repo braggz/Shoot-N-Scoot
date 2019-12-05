@@ -407,14 +407,14 @@ public class CanyonPlayerScript : MonoBehaviour
             MuzTime2 = Time.fixedTime; //starts the timer that determines how much time has passed
             muz = false;
             muz2 = true;
-
+            GunShot.Stop();
+            GunSmoke.Stop();
 
         }
         if ((MuzTime1 - MuzTime2) > MuzzleFlashTime && muz2 == true)
         {
             animationState = AnimationState.IDLE;
-            GunShot.Stop();
-            GunSmoke.Stop();
+            
             //MuzzleFlash.SetActive(false);
             bool HasShotP1 = (Player.gameObject.name == "Player 1" && ShotHigh); //This determine which player is shooting
             bool HasShotP2 = (Player.gameObject.name == "Player 2" && ShotHigh);
