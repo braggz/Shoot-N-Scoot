@@ -93,6 +93,7 @@ public class Players : MonoBehaviour
         IDLE = 1,
         RUNNING = 2,
         JUMP = 3,
+        CROUCH =4
         
     };
 
@@ -118,29 +119,39 @@ public class Players : MonoBehaviour
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", false);
-                
+                animator.SetBool("isCrouch", false);
                 break;
             case AnimationState.IDLE:
                 animator.SetBool("isIdle", true);
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", false);
-                
+                animator.SetBool("isCrouch", false);
+
                 break;
             case AnimationState.RUNNING:
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isRunning", true);
                 animator.SetBool("isJumping", false);
-               
+                animator.SetBool("isCrouch", false);
+
                 break;
             case AnimationState.JUMP:
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", true);
-                
-                break;
-           
+                animator.SetBool("isCrouch", false);
 
-               
+                break;
+            case AnimationState.CROUCH:
+                animator.SetBool("isIdle", false);
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isCrouch", true);
+
+                break;
+
+
+
             default:
                 break;
         }
@@ -168,7 +179,11 @@ public class Players : MonoBehaviour
         {
            // Gun.SetActive(true);
         }
-
+        if(InCover && !ChooseJump && !ChooseRun)
+        {
+            animationState = AnimationState.CROUCH;
+        }
+        
         Aiming();
         //***************************Resets the game for testing purposes************************************************************************
         if (Input.GetKeyDown(Reset))
@@ -241,28 +256,28 @@ public class Players : MonoBehaviour
                 
                 CanShoot = false;
                 ChooseRun = true;
-                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+               // Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
             }
             else if (CoverPosition == 1)
             {
                 ChooseRun = true;
                 CanShoot = false;
-                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+               // Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
             }
             else if (CoverPosition <= 2)
             {
                 ChooseRun = true;
                 CanShoot = false;
-                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+              //  Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
             }
             else if (CoverPosition <= 3)
             {
                 CanShoot = false;
                 ChooseRun = true;
-                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+               // Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
 
 
@@ -313,14 +328,14 @@ public class Players : MonoBehaviour
         //**********************This moves the player in and out of cover**************************************
         if (Input.GetKeyDown(Peak) && InCover == true && CanShoot && !isPaused)
         {
-            Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y + .7f);
+          //  Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y + .7f);
             InCover = false;
             // Debug.Log("test1");
             animationState = AnimationState.IDLE;
         }
         if (Input.GetKeyDown(Duck) && InCover == false && CanShoot && !isPaused)
         {
-           Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+          // Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
             InCover = true;
             //animationState = AnimationState.Crouch;
             // Debug.Log("test");
