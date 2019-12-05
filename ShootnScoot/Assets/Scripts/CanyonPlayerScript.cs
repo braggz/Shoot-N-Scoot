@@ -66,7 +66,7 @@ public class CanyonPlayerScript : MonoBehaviour
     private float rlt2;
     private bool BulletLoaded;
     //private bool enemydead;
-    public GameObject MuzzleFlash; //the muzzle flash game object
+    //public GameObject MuzzleFlash; //the muzzle flash game object
     private bool EnemyCover; //Determines if the enemy is in cover
     private bool CanShoot; //Determines if the player has the ability to shoot
     private bool reloading;
@@ -79,7 +79,7 @@ public class CanyonPlayerScript : MonoBehaviour
     void Start()
     {
         InCover = true; //Players start in cover
-        MuzzleFlash.SetActive(false);
+       // MuzzleFlash.SetActive(false);
         CanShoot = true;
         BulletLoaded = true;
         reloading = false;
@@ -309,7 +309,7 @@ public class CanyonPlayerScript : MonoBehaviour
         if (muz)
         {
 
-            MuzzleFlash.SetActive(true);
+           // MuzzleFlash.SetActive(true);
 
             MuzTime2 = Time.fixedTime; //starts the timer that determines how much time has passed
             muz = false;
@@ -319,7 +319,7 @@ public class CanyonPlayerScript : MonoBehaviour
         }
         if ((MuzTime1 - MuzTime2) > MuzzleFlashTime && muz2 == true)
         {
-            MuzzleFlash.SetActive(false);
+            //MuzzleFlash.SetActive(false);
             bool HasShotP1 = (Player.gameObject.name == "Player 1" && ShotHigh); //This determine which player is shooting
             bool HasShotP2 = (Player.gameObject.name == "Player 2" && ShotHigh);
             if (HasShotP1)
