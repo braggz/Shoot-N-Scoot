@@ -20,7 +20,9 @@ public class CanyonPlayerScript : MonoBehaviour
     //    public KeyCode Menu = KeyCode.Escape;
 
     private int CoverPosition = 0; // Determines what cover position the player is in
-    public float Speed = 0.5f; // How fast the character moves
+    public float RunSpeed = 0.25f;
+    public float JumpSpeed = .25f; // How fast the character moves
+    public GameObject Perks;
     public GameObject Cover1;  //First Position
     public GameObject Cover2; //Second Position
     public GameObject Cover3; // Third Position
@@ -92,8 +94,19 @@ public class CanyonPlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
-           isPaused = PauseMenu.GetComponent<PauseMenuScript>().isPaused;
+        if (Player.name == "Player1")
+        {
+            RunSpeed = Perks.GetComponent<PerkScript>().Player1RunSpeed;
+            JumpSpeed = Perks.GetComponent<PerkScript>().Player1JumpSpeed;
+            ReloadTime = Perks.GetComponent<PerkScript>().Player1ReloadSpeed;
+        }
+        else
+        {
+            RunSpeed = Perks.GetComponent<PerkScript>().Player2RunSpeed;
+            JumpSpeed = Perks.GetComponent<PerkScript>().Player2JumpSpeed;
+            ReloadTime = Perks.GetComponent<PerkScript>().Player2ReloadSpeed;
+        }
+        isPaused = PauseMenu.GetComponent<PauseMenuScript>().isPaused;
 
       
 
@@ -374,7 +387,7 @@ public class CanyonPlayerScript : MonoBehaviour
         {
 
 
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover1.transform.position, Speed); //moves the player towards a postion
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover1.transform.position, RunSpeed); //moves the player towards a postion
 
             //this checks of the player has reached the next position
             if (Player.transform.position.x == Cover1.transform.position.x && Player.transform.position.y == Cover1.transform.position.y)
@@ -391,7 +404,7 @@ public class CanyonPlayerScript : MonoBehaviour
         if (ChooseRun && CoverPosition == 1 &&!isPaused)
         {
 
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover2.transform.position, Speed);
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover2.transform.position, RunSpeed);
 
 
             if (Player.transform.position.x == Cover2.transform.position.x && Player.transform.position.y == Cover2.transform.position.y)
@@ -408,7 +421,7 @@ public class CanyonPlayerScript : MonoBehaviour
         if (ChooseRun && CoverPosition == 2 && !isPaused)
         {
 
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover3.transform.position, Speed);
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover3.transform.position, RunSpeed);
 
 
             if (Player.transform.position.x == Cover3.transform.position.x && Player.transform.position.y == Cover3.transform.position.y)
@@ -424,7 +437,7 @@ public class CanyonPlayerScript : MonoBehaviour
         if (ChooseRun && CoverPosition == 3 && !isPaused)
         {
 
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover4.transform.position, Speed);
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover4.transform.position, RunSpeed);
 
 
             if (Player.transform.position.x == Cover4.transform.position.x && Player.transform.position.y == Cover4.transform.position.y)
@@ -440,7 +453,7 @@ public class CanyonPlayerScript : MonoBehaviour
         if (ChooseRun && CoverPosition == 4 && !isPaused)
         {
 
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover5.transform.position, Speed);
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover5.transform.position, RunSpeed);
 
 
             if (Player.transform.position.x == Cover5.transform.position.x && Player.transform.position.y == Cover5.transform.position.y)
@@ -457,7 +470,7 @@ public class CanyonPlayerScript : MonoBehaviour
         if (ChooseRun && CoverPosition == 5 && !isPaused)
         {
 
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover6.transform.position, Speed);
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover6.transform.position, RunSpeed);
 
 
             if (Player.transform.position.x == Cover6.transform.position.x && Player.transform.position.y == Cover6.transform.position.y)
@@ -484,7 +497,7 @@ public class CanyonPlayerScript : MonoBehaviour
         {
             if (!jumping)
             {
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump1.transform.position, Speed); //moves the player towards a postion
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump1.transform.position, JumpSpeed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump1.transform.position.x && Player.transform.position.y == Jump1.transform.position.y)
             {
@@ -494,7 +507,7 @@ public class CanyonPlayerScript : MonoBehaviour
             if (jumping)
             {
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover1.transform.position, Speed);
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover1.transform.position, JumpSpeed);
 
             }
             //this checks of the player has reached the next position
@@ -516,7 +529,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
             if (!jumping)
             {
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump2.transform.position, Speed); //moves the player towards a postion
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump2.transform.position, JumpSpeed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump2.transform.position.x && Player.transform.position.y == Jump2.transform.position.y)
             {
@@ -526,7 +539,7 @@ public class CanyonPlayerScript : MonoBehaviour
             if (jumping)
             {
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover2.transform.position, Speed);
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover2.transform.position, JumpSpeed);
 
             }
             //this checks of the player has reached the next position
@@ -547,7 +560,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
             if (!jumping)
             {
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump3.transform.position, Speed); //moves the player towards a postion
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump3.transform.position, JumpSpeed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump3.transform.position.x && Player.transform.position.y == Jump3.transform.position.y)
             {
@@ -557,7 +570,7 @@ public class CanyonPlayerScript : MonoBehaviour
             if (jumping)
             {
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover3.transform.position, Speed);
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover3.transform.position, JumpSpeed);
 
             }
             //this checks of the player has reached the next position
@@ -577,7 +590,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
             if (!jumping)
             {
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump4.transform.position, Speed); //moves the player towards a postion
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump4.transform.position, JumpSpeed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump4.transform.position.x && Player.transform.position.y == Jump4.transform.position.y)
             {
@@ -587,7 +600,7 @@ public class CanyonPlayerScript : MonoBehaviour
             if (jumping)
             {
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover4.transform.position, Speed);
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover4.transform.position, JumpSpeed);
 
             }
             //this checks of the player has reached the next position
@@ -607,7 +620,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
             if (!jumping)
             {
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump5.transform.position, Speed); //moves the player towards a postion
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump5.transform.position, JumpSpeed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump5.transform.position.x && Player.transform.position.y == Jump5.transform.position.y)
             {
@@ -617,7 +630,7 @@ public class CanyonPlayerScript : MonoBehaviour
             if (jumping)
             {
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover5.transform.position, Speed);
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover5.transform.position, JumpSpeed);
 
             }
             //this checks of the player has reached the next position
@@ -638,7 +651,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
             if (!jumping)
             {
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump6.transform.position, Speed); //moves the player towards a postion
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump6.transform.position, JumpSpeed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump6.transform.position.x && Player.transform.position.y == Jump6.transform.position.y)
             {
@@ -648,7 +661,7 @@ public class CanyonPlayerScript : MonoBehaviour
             if (jumping)
             {
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover6.transform.position, Speed);
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover6.transform.position, JumpSpeed);
 
             }
             //this checks of the player has reached the next position

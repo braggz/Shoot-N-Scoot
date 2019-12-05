@@ -576,7 +576,9 @@ MonoBehaviour:
   ShootHigh: 106
   ShootLow: 110
   Reload: 111
-  Speed: 0.25
+  RunSpeed: 0.25
+  JumpSpeed: 0.25
+  Perks: {fileID: 9166859939908253831, guid: 023df40b1e95e4049b89130ee45aab4d, type: 3}
   Cover1: {fileID: 1144817544}
   Cover2: {fileID: 432033264}
   Cover3: {fileID: 82287077}
@@ -4593,7 +4595,9 @@ MonoBehaviour:
   ShootHigh: 102
   ShootLow: 101
   Reload: 114
-  Speed: 0.25
+  RunSpeed: 0.25
+  JumpSpeed: 0.25
+  Perks: {fileID: 9166859939908253831, guid: 023df40b1e95e4049b89130ee45aab4d, type: 3}
   Cover1: {fileID: 1513751030}
   Cover2: {fileID: 2071647936}
   Cover3: {fileID: 177534351}

@@ -8396,7 +8396,8 @@ MonoBehaviour:
   ShootHigh: 105
   ShootLow: 106
   Reload: 111
-  Speed: 0.25
+  RunSpeed: 0.25
+  JumpSpeed: 0
   Cover1: {fileID: 1679792061}
   Cover2: {fileID: 1861214478}
   Cover3: {fileID: 1320173756}
@@ -8416,6 +8417,7 @@ MonoBehaviour:
   BulletMissTime: 0.3
   ReloadTime: 1
   isPaused: 0
+  Perks: {fileID: 9166859939908253831, guid: 023df40b1e95e4049b89130ee45aab4d, type: 3}
 --- !u!212 &1276210463
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10833,7 +10835,8 @@ MonoBehaviour:
   ShootHigh: 101
   ShootLow: 102
   Reload: 114
-  Speed: 0.25
+  RunSpeed: 0.25
+  JumpSpeed: 0
   Cover1: {fileID: 2132117985}
   Cover2: {fileID: 2077588204}
   Cover3: {fileID: 1504948710}
@@ -10853,6 +10856,7 @@ MonoBehaviour:
   BulletMissTime: 0.3
   ReloadTime: 1
   isPaused: 0
+  Perks: {fileID: 9166859939908253831, guid: 023df40b1e95e4049b89130ee45aab4d, type: 3}
 --- !u!95 &2050617404
 Animator:
   serializedVersion: 3

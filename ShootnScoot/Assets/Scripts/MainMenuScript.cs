@@ -75,32 +75,32 @@ public class MainMenuScript : MonoBehaviour
         //PerkPrefab.GetComponent<PerkScript>().Player2ReloadSpeed = 0.5f;
 
         PerkPrefab.GetComponent<PerkScript>().Player2ReloadSpeed = 0.5f;
-        PerkPrefab.GetComponent<PerkScript>().Player2JumpSpeed = 1;
-        PerkPrefab.GetComponent<PerkScript>().Player2RunSpeed = 1;
+        PerkPrefab.GetComponent<PerkScript>().Player2JumpSpeed = .25f;
+        PerkPrefab.GetComponent<PerkScript>().Player2RunSpeed = .25f;
     }
     public void Player1SelectRun()
     {
-        PerkPrefab.GetComponent<PerkScript>().Player1ReloadSpeed = 1;
-        PerkPrefab.GetComponent<PerkScript>().Player1JumpSpeed = 1;
+        PerkPrefab.GetComponent<PerkScript>().Player1ReloadSpeed = 1f;
+        PerkPrefab.GetComponent<PerkScript>().Player1JumpSpeed = .25f;
         PerkPrefab.GetComponent<PerkScript>().Player1RunSpeed = 300f;
     }
     public void Player2SelectRun()
     {
         PerkPrefab.GetComponent<PerkScript>().Player2ReloadSpeed = 1;
-        PerkPrefab.GetComponent<PerkScript>().Player2JumpSpeed = 1;
+        PerkPrefab.GetComponent<PerkScript>().Player2JumpSpeed = .25f;
         PerkPrefab.GetComponent<PerkScript>().Player2RunSpeed = 300f;
     }
     public void Player1SelectJump()
     {
         PerkPrefab.GetComponent<PerkScript>().Player1ReloadSpeed = 1;
         PerkPrefab.GetComponent<PerkScript>().Player1JumpSpeed = 300f;
-        PerkPrefab.GetComponent<PerkScript>().Player1RunSpeed = 1;
+        PerkPrefab.GetComponent<PerkScript>().Player1RunSpeed = .25f;
     }
     public void Player2SelectJump()
     {
         PerkPrefab.GetComponent<PerkScript>().Player2ReloadSpeed = 1;
         PerkPrefab.GetComponent<PerkScript>().Player2JumpSpeed = 300f;
-        PerkPrefab.GetComponent<PerkScript>().Player2RunSpeed = 1;
+        PerkPrefab.GetComponent<PerkScript>().Player2RunSpeed = .25f;
     }
     
 

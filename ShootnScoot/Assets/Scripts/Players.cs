@@ -20,7 +20,8 @@ public class Players : MonoBehaviour
 //    public KeyCode Menu = KeyCode.Escape;
 
     private int CoverPosition = 0; // Determines what cover position the player is in
-    public float Speed =0.5f; // How fast the character moves
+    public float RunSpeed =0.25f;
+    public float JumpSpeed =.25f;// How fast the character moves
     public GameObject Cover1;  //First Position
     public GameObject Cover2; //Second Position
     public GameObject Cover3; // Third Position
@@ -56,7 +57,7 @@ public class Players : MonoBehaviour
     public float MuzzleFlashTime = 0.1f; // Determines how long the muzzle flash stays on screen
     public float BulletHitTime = 0.1f; //Determines the delay from when player shoots to when it hits
     public float BulletMissTime = 0.6f; //Determines how long befoe the enemy is safe
-    public float ReloadTime = 3f;
+    public float ReloadTime = 1f;
     private float rlt1;
     private float rlt2;
     private bool BulletLoaded;
@@ -69,7 +70,7 @@ public class Players : MonoBehaviour
     private bool muz2;
     public bool isPaused;
     private bool InCover; //Determines whether the player is in cover or not
-    
+    public GameObject Perks;
     // Start is called before the first frame update
     void Start()
     {
@@ -98,6 +99,18 @@ public class Players : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Player.name=="Player 1")
+        {
+            RunSpeed = Perks.GetComponent<PerkScript>().Player1RunSpeed;
+            JumpSpeed = Perks.GetComponent<PerkScript>().Player1JumpSpeed;
+            ReloadTime = Perks.GetComponent<PerkScript>().Player1ReloadSpeed;
+        }
+        else
+        {
+            RunSpeed = Perks.GetComponent<PerkScript>().Player2RunSpeed;
+            JumpSpeed = Perks.GetComponent<PerkScript>().Player2JumpSpeed;
+            ReloadTime = Perks.GetComponent<PerkScript>().Player2ReloadSpeed;
+        }
 
         switch (animationState)
         {
@@ -411,7 +424,7 @@ public class Players : MonoBehaviour
         {
             animationState = AnimationState.RUNNING;
 
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover1.transform.position, Speed); //moves the player towards a postion
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover1.transform.position, RunSpeed); //moves the player towards a postion
 
             //this checks of the player has reached the next position
             if (Player.transform.position.x == Cover1.transform.position.x && Player.transform.position.y == Cover1.transform.position.y)
@@ -431,7 +444,7 @@ public class Players : MonoBehaviour
         {
             animationState = AnimationState.RUNNING;
 
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover2.transform.position, Speed);
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover2.transform.position,RunSpeed);
 
 
             if (Player.transform.position.x == Cover2.transform.position.x && Player.transform.position.y == Cover2.transform.position.y)
@@ -451,7 +464,7 @@ public class Players : MonoBehaviour
         {
             animationState = AnimationState.RUNNING;
 
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover3.transform.position, Speed);
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover3.transform.position, RunSpeed);
 
 
             if (Player.transform.position.x == Cover3.transform.position.x && Player.transform.position.y == Cover3.transform.position.y)
@@ -471,7 +484,7 @@ public class Players : MonoBehaviour
         {
             animationState = AnimationState.RUNNING;
 
-            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover4.transform.position, Speed);
+            Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover4.transform.position, RunSpeed);
 
 
             if (Player.transform.position.x == Cover4.transform.position.x && Player.transform.position.y == Cover4.transform.position.y)
@@ -509,7 +522,7 @@ public class Players : MonoBehaviour
             {
                 animationState = AnimationState.JUMP;
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump1.transform.position, Speed); //moves the player towards a postion
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump1.transform.position, JumpSpeed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump1.transform.position.x && Player.transform.position.y == Jump1.transform.position.y)
             {
@@ -519,7 +532,7 @@ public class Players : MonoBehaviour
             if (jumping)
             {
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover1.transform.position, Speed);
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover1.transform.position, JumpSpeed);
 
             }
             //this checks of the player has reached the next position
@@ -546,7 +559,7 @@ public class Players : MonoBehaviour
             {
                 animationState = AnimationState.JUMP;
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump2.transform.position, Speed); //moves the player towards a postion
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump2.transform.position, JumpSpeed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump2.transform.position.x && Player.transform.position.y == Jump2.transform.position.y)
             {
@@ -556,7 +569,7 @@ public class Players : MonoBehaviour
             if (jumping)
             {
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover2.transform.position, Speed);
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover2.transform.position, JumpSpeed);
 
             }
             //this checks of the player has reached the next position
@@ -581,7 +594,7 @@ public class Players : MonoBehaviour
             {
                 animationState = AnimationState.JUMP;
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump3.transform.position, Speed); //moves the player towards a postion
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump3.transform.position, JumpSpeed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump3.transform.position.x && Player.transform.position.y == Jump3.transform.position.y)
             {
@@ -591,7 +604,7 @@ public class Players : MonoBehaviour
             if (jumping)
             {
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover3.transform.position, Speed);
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover3.transform.position, JumpSpeed);
 
             }
             //this checks of the player has reached the next position
@@ -616,7 +629,7 @@ public class Players : MonoBehaviour
             {
                 animationState = AnimationState.JUMP;
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump4.transform.position, Speed); //moves the player towards a postion
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Jump4.transform.position, JumpSpeed); //moves the player towards a postion
             }
             if (Player.transform.position.x == Jump4.transform.position.x && Player.transform.position.y == Jump4.transform.position.y)
             {
@@ -626,7 +639,7 @@ public class Players : MonoBehaviour
             if (jumping)
             {
 
-                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover4.transform.position, Speed);
+                Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover4.transform.position, JumpSpeed);
 
             }
             //this checks of the player has reached the next position

@@ -44,11 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player1RunSpeed: 1
-  Player1JumpSpeed: 300
+  Player1JumpSpeed: 1
   Player1ReloadSpeed: 1
   Player2RunSpeed: 1
   Player2JumpSpeed: 1
   Player2ReloadSpeed: 0.5
-  test1: {fileID: 6705792702143298632, guid: 0465f5e108f5e2b4e9308389f606fe65, type: 3}
-  test2: {fileID: 3636195999574364412, guid: f318460b2f803e14790884f79c7a4a42, type: 3}
-  test3: {fileID: 1078205004580642245, guid: a14d82fec49696d449657362b7ad63fc, type: 3}
