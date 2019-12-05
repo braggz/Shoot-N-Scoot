@@ -603,7 +603,7 @@ MonoBehaviour:
   GunShot: {fileID: 79525074}
   GunSmoke: {fileID: 880614031}
   PauseMenu: {fileID: 1769591271}
-  MuzzleFlashTime: 0.1
+  MuzzleFlashTime: 0.5
   BulletHitTime: 0.1
   BulletMissTime: 0.6
   ReloadTime: 3
@@ -4832,7 +4832,7 @@ MonoBehaviour:
   GunShot: {fileID: 1032641282}
   GunSmoke: {fileID: 1493942184}
   PauseMenu: {fileID: 1769591271}
-  MuzzleFlashTime: 0.5
+  MuzzleFlashTime: 0.25
   BulletHitTime: 0.1
   BulletMissTime: 0.3
   ReloadTime: 1
@@ -7979,7 +7979,7 @@ PrefabInstance:
     - target: {fileID: 7904000947888059204, guid: b99d54730b41cd17b8b562a6733f2f67,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.56
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 7904000947888059204, guid: b99d54730b41cd17b8b562a6733f2f67,
         type: 3}
@@ -8034,17 +8034,22 @@ PrefabInstance:
     - target: {fileID: 7904000947888059207, guid: b99d54730b41cd17b8b562a6733f2f67,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7904000947888059207, guid: b99d54730b41cd17b8b562a6733f2f67,
         type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7904000947888059207, guid: b99d54730b41cd17b8b562a6733f2f67,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.2
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904000947888059207, guid: b99d54730b41cd17b8b562a6733f2f67,
+        type: 3}
+      propertyPath: prewarm
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7904000947888059206, guid: b99d54730b41cd17b8b562a6733f2f67,
         type: 3}
@@ -14014,17 +14019,22 @@ PrefabInstance:
     - target: {fileID: 7904000947888059207, guid: b99d54730b41cd17b8b562a6733f2f67,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7904000947888059207, guid: b99d54730b41cd17b8b562a6733f2f67,
         type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7904000947888059207, guid: b99d54730b41cd17b8b562a6733f2f67,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.2
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904000947888059207, guid: b99d54730b41cd17b8b562a6733f2f67,
+        type: 3}
+      propertyPath: prewarm
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7904000947888059206, guid: b99d54730b41cd17b8b562a6733f2f67,
         type: 3}
