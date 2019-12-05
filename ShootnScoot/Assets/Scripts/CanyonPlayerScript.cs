@@ -38,7 +38,7 @@ public class CanyonPlayerScript : MonoBehaviour
     public GameObject BlueWin;
     public GameObject RedWin;
 
-
+    public bool hasWon;
     public GameObject Player; //Tells who the player is
 
     public GameObject Enemy; // Tells who the enemy is
@@ -57,7 +57,7 @@ public class CanyonPlayerScript : MonoBehaviour
     private bool jumping = false;
     private float DeadTime1; //This is the variable for the bullet delay, it compares the two times
     private float DeadTime2; //and determines if the player is out of cover
-
+    public GameObject PauseMenu;
     public float MuzzleFlashTime = 0.1f; // Determines how long the muzzle flash stays on screen
     public float BulletHitTime = 0.1f; //Determines the delay from when player shoots to when it hits
     public float BulletMissTime = 0.6f; //Determines how long befoe the enemy is safe
@@ -74,7 +74,7 @@ public class CanyonPlayerScript : MonoBehaviour
     private bool muz2;
 
     private bool InCover; //Determines whether the player is in cover or not
-
+    public bool isPaused;
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +83,7 @@ public class CanyonPlayerScript : MonoBehaviour
         CanShoot = true;
         BulletLoaded = true;
         reloading = false;
+        hasWon = false;
 
 
 
@@ -91,6 +92,10 @@ public class CanyonPlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+     
+           isPaused = PauseMenu.GetComponent<PauseMenuScript>().isPaused;
+
+      
 
         EnemyCover = Enemy.GetComponent<CanyonPlayerScript>().InCover; // checks if the enemy is in cover
         MuzzleFlashFunct(); //Function that handles muzzle flashes
@@ -151,13 +156,14 @@ public class CanyonPlayerScript : MonoBehaviour
             if (CoverPosition == 0)
             {
 
-
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
                 CanShoot = false;
                 ChooseRun = true;
 
             }
             else if (CoverPosition == 1)
             {
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
                 ChooseRun = true;
                 CanShoot = false;
 
@@ -165,6 +171,7 @@ public class CanyonPlayerScript : MonoBehaviour
             }
             else if (CoverPosition <= 2)
             {
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
                 ChooseRun = true;
                 CanShoot = false;
 
@@ -172,6 +179,7 @@ public class CanyonPlayerScript : MonoBehaviour
             }
             else if (CoverPosition <= 3)
             {
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
                 CanShoot = false;
                 ChooseRun = true;
 
@@ -180,6 +188,7 @@ public class CanyonPlayerScript : MonoBehaviour
             }
             else if (CoverPosition <= 4)
             {
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
                 CanShoot = false;
                 ChooseRun = true;
 
@@ -188,6 +197,7 @@ public class CanyonPlayerScript : MonoBehaviour
             }
             else if (CoverPosition <= 5)
             {
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
                 CanShoot = false;
                 ChooseRun = true;
 
@@ -254,13 +264,13 @@ public class CanyonPlayerScript : MonoBehaviour
         }
 
         //**********************This moves the player in and out of cover**************************************
-        if (Input.GetKeyDown(Peak) && InCover == true && CanShoot)
+        if (Input.GetKeyDown(Peak) && InCover == true && CanShoot && !isPaused)
         {
             Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y + .7f);
             InCover = false;
             // Debug.Log("test1");
         }
-        if (Input.GetKeyDown(Duck) && InCover == false && CanShoot)
+        if (Input.GetKeyDown(Duck) && InCover == false && CanShoot && !isPaused)
         {
             Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
             InCover = true;
@@ -269,7 +279,7 @@ public class CanyonPlayerScript : MonoBehaviour
         }
 
         rlt1 = Time.fixedTime;
-        if (Input.GetKeyDown(Reload) && InCover && !reloading)
+        if (Input.GetKeyDown(Reload) && InCover && !reloading && !isPaused)
         {
             Debug.Log("reloading");
             reloading = true;
@@ -278,7 +288,7 @@ public class CanyonPlayerScript : MonoBehaviour
         }
 
 
-        else if ((rlt1 - rlt2) >= ReloadTime && reloading)
+        else if ((rlt1 - rlt2) >= ReloadTime && reloading && !isPaused)
         {
             Debug.Log("reloading complete");
             reloading = false;
@@ -337,7 +347,7 @@ public class CanyonPlayerScript : MonoBehaviour
     private void Aiming()
     {
         //***************************This handles whether the player is shooting high or low ****************************************************
-        if (Input.GetKeyDown(ShootLow) && InCover == false && CanShoot && BulletLoaded)
+        if (Input.GetKeyDown(ShootLow) && InCover == false && CanShoot && BulletLoaded && !isPaused)
         {
 
             BulletLoaded = false;
@@ -345,7 +355,7 @@ public class CanyonPlayerScript : MonoBehaviour
             ShotLow = true;
             muz = true;
         }
-        if (Input.GetKeyDown(ShootHigh) && InCover == false && CanShoot && BulletLoaded)
+        if (Input.GetKeyDown(ShootHigh) && InCover == false && CanShoot && BulletLoaded && !isPaused)
         {
             BulletLoaded = false;
             DeadTime2 = Time.fixedTime; //Starts the timer for the bullet 
@@ -360,7 +370,7 @@ public class CanyonPlayerScript : MonoBehaviour
     {
         //************************This handles animating the characters when they change positions ****************************
         //moving to cover 1
-        if (ChooseRun && CoverPosition == 0)
+        if (ChooseRun && CoverPosition == 0 && !isPaused)
         {
 
 
@@ -378,7 +388,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
         }
         //moving to cover 2
-        if (ChooseRun && CoverPosition == 1)
+        if (ChooseRun && CoverPosition == 1 &&!isPaused)
         {
 
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover2.transform.position, Speed);
@@ -395,7 +405,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
         }
         //moving to cover 3
-        if (ChooseRun && CoverPosition == 2)
+        if (ChooseRun && CoverPosition == 2 && !isPaused)
         {
 
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover3.transform.position, Speed);
@@ -411,7 +421,7 @@ public class CanyonPlayerScript : MonoBehaviour
             }
 
         }
-        if (ChooseRun && CoverPosition == 3)
+        if (ChooseRun && CoverPosition == 3 && !isPaused)
         {
 
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover4.transform.position, Speed);
@@ -427,7 +437,7 @@ public class CanyonPlayerScript : MonoBehaviour
             }
 
         }
-        if (ChooseRun && CoverPosition == 4)
+        if (ChooseRun && CoverPosition == 4 && !isPaused)
         {
 
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover5.transform.position, Speed);
@@ -444,7 +454,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
         }
         //moving to cover 4
-        if (ChooseRun && CoverPosition == 5)
+        if (ChooseRun && CoverPosition == 5 && !isPaused)
         {
 
             Player.transform.position = Vector2.MoveTowards(Player.transform.position, Cover6.transform.position, Speed);
@@ -455,14 +465,7 @@ public class CanyonPlayerScript : MonoBehaviour
                 Enemy.transform.position = new Vector2(1000, 1000);
                 // Player.transform.position = Winner.transform.position;
 
-                if (Player.gameObject.tag == "Player1")
-                {
-                    camera.transform.position = BlueWin.transform.position;
-                }
-                else
-                {
-                    camera.transform.position = RedWin.transform.position;
-                }
+                hasWon = true;
                 InCover = true;
 
 
@@ -477,7 +480,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
     private void PlayerChoosesJump()
     {
-        if (ChooseJump && CoverPosition == 0)
+        if (ChooseJump && CoverPosition == 0 && !isPaused)
         {
             if (!jumping)
             {
@@ -508,7 +511,7 @@ public class CanyonPlayerScript : MonoBehaviour
         }
 
         //moving to cover 2
-        if (ChooseJump && CoverPosition == 1)
+        if (ChooseJump && CoverPosition == 1 && !isPaused)
         {
 
             if (!jumping)
@@ -539,7 +542,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
         }
         //moving to cover 3
-        if (ChooseJump && CoverPosition == 2)
+        if (ChooseJump && CoverPosition == 2 && !isPaused)
         {
 
             if (!jumping)
@@ -569,7 +572,7 @@ public class CanyonPlayerScript : MonoBehaviour
             }
 
         }
-        if (ChooseJump && CoverPosition == 3)
+        if (ChooseJump && CoverPosition == 3 && !isPaused)
         {
 
             if (!jumping)
@@ -599,7 +602,7 @@ public class CanyonPlayerScript : MonoBehaviour
             }
 
         }
-        if (ChooseJump && CoverPosition == 4)
+        if (ChooseJump && CoverPosition == 4 && !isPaused)
         {
 
             if (!jumping)
@@ -630,7 +633,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
         }
         //moving to cover 4
-        if (ChooseJump && CoverPosition == 5)
+        if (ChooseJump && CoverPosition == 5 && !isPaused)
         {
 
             if (!jumping)
@@ -652,15 +655,8 @@ public class CanyonPlayerScript : MonoBehaviour
             if (Player.transform.position.x == Cover6.transform.position.x && Player.transform.position.y == Cover6.transform.position.y)
             {
                 //reset varibales
-                if (Player.gameObject.tag == "Player1")
-                {
-                    camera.transform.position = BlueWin.transform.position;
-                }
-                else
-                {
-                    camera.transform.position = RedWin.transform.position;
-                }
-                Enemy.transform.position = new Vector2(1000, 1000);
+
+                hasWon = true;
                 //Player.transform.position = Winner.transform.position;
                 InCover = true;
                 jumping = false;

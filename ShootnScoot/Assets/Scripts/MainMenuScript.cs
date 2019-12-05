@@ -41,7 +41,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void LoadBankLevel()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Bank");
         Debug.Log("You go to Bank Level.");
     }
 

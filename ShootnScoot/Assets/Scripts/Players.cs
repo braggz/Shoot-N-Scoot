@@ -67,7 +67,7 @@ public class Players : MonoBehaviour
     private bool reloading;
     private bool muz; // keeps trakc if muzzle flash is active
     private bool muz2;
-    private bool isPaused;
+    public bool isPaused;
     private bool InCover; //Determines whether the player is in cover or not
     
     // Start is called before the first frame update
@@ -91,7 +91,8 @@ public class Players : MonoBehaviour
         NONE = 0,
         IDLE = 1,
         RUNNING = 2,
-        JUMP = 3
+        JUMP = 3,
+        AIM = 4
     };
 
     // Update is called once per frame
