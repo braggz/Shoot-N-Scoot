@@ -39,7 +39,7 @@ public class Players : MonoBehaviour
     public GameObject Enemy; // Tells who the enemy is
     public GameObject Winner; //The winners platform
     public GameObject Spawn; //Spawn point of players
-    public GameObject Gun; // The players weapon
+
     
     
     private float MuzTime1; // Determines how long the muzzle flash should last
@@ -61,7 +61,7 @@ public class Players : MonoBehaviour
     private float rlt2;
     private bool BulletLoaded;
     //private bool enemydead;
-    public GameObject MuzzleFlash; //the muzzle flash game object
+  //  public GameObject MuzzleFlash; //the muzzle flash game object
     private bool EnemyCover; //Determines if the enemy is in cover
     private bool CanShoot; //Determines if the player has the ability to shoot
     private bool reloading;
@@ -74,7 +74,7 @@ public class Players : MonoBehaviour
     void Start()
     {
         InCover = true; //Players start in cover
-        MuzzleFlash.SetActive(false); 
+      //  MuzzleFlash.SetActive(false); 
         CanShoot = true;
         BulletLoaded = true;
         reloading = false;
@@ -142,11 +142,11 @@ public class Players : MonoBehaviour
 
         {
 
-            Gun.SetActive(false);
+          //  Gun.SetActive(false);
         }
         else
         {
-            Gun.SetActive(true);
+           // Gun.SetActive(true);
         }
 
         Aiming();
@@ -336,7 +336,7 @@ public class Players : MonoBehaviour
         if (muz)
         {
 
-            MuzzleFlash.SetActive(true);
+           // MuzzleFlash.SetActive(true);
 
             MuzTime2 = Time.fixedTime; //starts the timer that determines how much time has passed
             muz = false;
@@ -346,12 +346,12 @@ public class Players : MonoBehaviour
         }
         if ((MuzTime1 - MuzTime2) > MuzzleFlashTime && muz2 == true)
         {
-            MuzzleFlash.SetActive(false);
+           // MuzzleFlash.SetActive(false);
             bool HasShotP1 = (Player.gameObject.name == "Player 1" && ShotHigh); //This determine which player is shooting
             bool HasShotP2 = (Player.gameObject.name == "Player 2" && ShotHigh);
             if (HasShotP1)
             {
-                Gun.transform.Rotate(new Vector3(0, 0, -45)); // Points the gun up when the player shoots for p1
+               
 
                 muz2 = false;
                 ShotLow = false;
@@ -361,7 +361,7 @@ public class Players : MonoBehaviour
             else if (HasShotP2)
             {
 
-                Gun.transform.Rotate(new Vector3(0, 0, 45));  // Points the gun up when the player shoots for p2
+              
                 muz2 = false;
                 ShotLow = false;
                 ShotHigh = false;
@@ -387,14 +387,7 @@ public class Players : MonoBehaviour
             BulletLoaded = false;
             DeadTime2 = Time.fixedTime; //Starts the timer for the bullet 
             ShotHigh = true;
-            if (Player.name == "Player 1") //Determines which player gun points up when shoot high is pressed
-            {
-                Gun.transform.Rotate(new Vector3(0, 0, 45));
-            }
-            else
-            {
-                Gun.transform.Rotate(new Vector3(0, 0, -45));
-            }
+            
 
             muz = true;
         }
