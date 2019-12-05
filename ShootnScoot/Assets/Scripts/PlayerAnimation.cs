@@ -22,21 +22,31 @@ public class PlayerAnimation : MonoBehaviour
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", false);
+                animator.SetBool("isCrouching", false);
                 break;
             case AnimationState.IDLE:
                 animator.SetBool("isIdle", true);
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", false);
+                animator.SetBool("isCrouching", false);
                 break;
             case AnimationState.RUNNING:
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isRunning", true);
                 animator.SetBool("isJumping", false);
+                animator.SetBool("isCrouching", false);
                 break;
             case AnimationState.JUMP:
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", true);
+                animator.SetBool("isCrouching", false);
+                break;
+            case AnimationState.Crouch:
+                animator.SetBool("isIdle", false);
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isCrouching", true);
                 break;
             default:
                 break;
@@ -49,5 +59,6 @@ public enum AnimationState
     NONE = 0,
     IDLE = 1,
     RUNNING = 2,
-    JUMP = 3
+    JUMP = 3,
+    Crouch =4
 };

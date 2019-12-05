@@ -8559,7 +8559,7 @@ MonoBehaviour:
   ShootHigh: 105
   ShootLow: 106
   Reload: 111
-  Speed: 3
+  Speed: 0.1
   Cover1: {fileID: 1679792061}
   Cover2: {fileID: 1861214478}
   Cover3: {fileID: 1320173756}

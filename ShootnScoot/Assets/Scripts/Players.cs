@@ -92,7 +92,7 @@ public class Players : MonoBehaviour
         IDLE = 1,
         RUNNING = 2,
         JUMP = 3,
-        AIM = 4
+        
     };
 
     // Update is called once per frame
@@ -105,22 +105,29 @@ public class Players : MonoBehaviour
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", false);
+                
                 break;
             case AnimationState.IDLE:
                 animator.SetBool("isIdle", true);
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", false);
+                
                 break;
             case AnimationState.RUNNING:
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isRunning", true);
                 animator.SetBool("isJumping", false);
+               
                 break;
             case AnimationState.JUMP:
                 animator.SetBool("isIdle", false);
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", true);
+                
                 break;
+           
+
+               
             default:
                 break;
         }
@@ -221,28 +228,28 @@ public class Players : MonoBehaviour
                 
                 CanShoot = false;
                 ChooseRun = true;
-                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+                //Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
             }
             else if (CoverPosition == 1)
             {
                 ChooseRun = true;
                 CanShoot = false;
-                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+               // Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
             }
             else if (CoverPosition <= 2)
             {
                 ChooseRun = true;
                 CanShoot = false;
-                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+                //Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
             }
             else if (CoverPosition <= 3)
             {
                 CanShoot = false;
                 ChooseRun = true;
-                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+               // Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
 
 
@@ -296,14 +303,17 @@ public class Players : MonoBehaviour
             Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y + .7f);
             InCover = false;
             // Debug.Log("test1");
+            animationState = AnimationState.IDLE;
         }
         if (Input.GetKeyDown(Duck) && InCover == false && CanShoot && !isPaused)
         {
-            Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+           Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
             InCover = true;
-
+            //animationState = AnimationState.Crouch;
             // Debug.Log("test");
         }
+        
+       
 
         rlt1 = Time.fixedTime;
         if (Input.GetKeyDown(Reload) && InCover && !reloading && !isPaused && !BulletLoaded)
