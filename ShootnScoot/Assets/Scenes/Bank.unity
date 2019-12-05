@@ -8052,7 +8052,7 @@ MonoBehaviour:
   Enemy: {fileID: 2050617400}
   Winner: {fileID: 1379451808}
   Spawn: {fileID: 865725512}
-  MuzzleFlashTime: 0.01
+  MuzzleFlashTime: 0.25
   BulletHitTime: 0
   BulletMissTime: 0.3
   ReloadTime: 1
@@ -10491,7 +10491,7 @@ MonoBehaviour:
   Enemy: {fileID: 1276210461}
   Winner: {fileID: 1379451808}
   Spawn: {fileID: 850437244}
-  MuzzleFlashTime: 0.5
+  MuzzleFlashTime: 0.25
   BulletHitTime: 0
   BulletMissTime: 0.3
   ReloadTime: 1

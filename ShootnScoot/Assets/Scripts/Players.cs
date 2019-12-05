@@ -208,7 +208,7 @@ public class Players : MonoBehaviour
             ChooseRun = false;
             ChooseJump = false;
             jumping = false;
-            InCover = true;
+            InCover = false;
             
         }
 
@@ -224,7 +224,7 @@ public class Players : MonoBehaviour
             //resets variables
             Enemy.GetComponent<Players>().CoverPosition = 0;
             Enemy.GetComponent<Players>().CanShoot = true;
-            Enemy.GetComponent<Players>().InCover = true;
+            Enemy.GetComponent<Players>().InCover = false;
             Enemy.GetComponent<Players>().ChooseRun = false;
             Enemy.GetComponent<Players>().jumping = false;
             Enemy.GetComponent<Players>().ChooseJump = false;
@@ -442,7 +442,7 @@ public class Players : MonoBehaviour
             BulletLoaded = false;
             DeadTime2 = Time.fixedTime; //Starts the timer for the bullet 
             ShotHigh = true;
-            
+            animationState = AnimationState.SHOOTLOW;
 
             muz = true;
         }
