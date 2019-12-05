@@ -74,7 +74,7 @@ public class Players : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InCover = true; //Players start in cover
+        InCover = false; //Players start in cover
       //  MuzzleFlash.SetActive(false); 
         CanShoot = true;
         BulletLoaded = true;
@@ -507,15 +507,15 @@ public class Players : MonoBehaviour
                
                 // Player.transform.position = Winner.transform.position;
                 hasWon = true;
-               /* if (Player.gameObject.tag == "Player 1")
-                {
-                    hasWon = true;
-                }
-                else
-                {
-                    
-                }*/
-                InCover = true;
+                /* if (Player.gameObject.tag == "Player 1")
+                 {
+                     hasWon = true;
+                 }
+                 else
+                 {
+
+                 }*/
+                InCover = false ;
 
 
                 CanShoot = true;
