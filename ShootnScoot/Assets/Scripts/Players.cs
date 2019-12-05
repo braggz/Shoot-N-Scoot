@@ -93,7 +93,8 @@ public class Players : MonoBehaviour
         IDLE = 1,
         RUNNING = 2,
         JUMP = 3,
-        CROUCH =4
+        CROUCH =4,
+        SHOOTLOW =5
         
     };
 
@@ -120,12 +121,14 @@ public class Players : MonoBehaviour
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isCrouch", false);
+                animator.SetBool("ShootLow", false);
                 break;
             case AnimationState.IDLE:
                 animator.SetBool("isIdle", true);
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isCrouch", false);
+                animator.SetBool("ShootLow", false);
 
                 break;
             case AnimationState.RUNNING:
@@ -133,6 +136,7 @@ public class Players : MonoBehaviour
                 animator.SetBool("isRunning", true);
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isCrouch", false);
+                animator.SetBool("ShootLow", false);
 
                 break;
             case AnimationState.JUMP:
@@ -140,6 +144,7 @@ public class Players : MonoBehaviour
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", true);
                 animator.SetBool("isCrouch", false);
+                animator.SetBool("ShootLow", false);
 
                 break;
             case AnimationState.CROUCH:
@@ -147,7 +152,14 @@ public class Players : MonoBehaviour
                 animator.SetBool("isRunning", false);
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isCrouch", true);
-
+                animator.SetBool("ShootLow", false);
+                break;
+            case AnimationState.SHOOTLOW:
+                animator.SetBool("isIdle", false);
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isCrouch", false);
+                animator.SetBool("ShootLow", true);
                 break;
 
 
@@ -387,6 +399,8 @@ public class Players : MonoBehaviour
            // MuzzleFlash.SetActive(false);
             bool HasShotP1 = (Player.gameObject.name == "Player 1" && ShotHigh); //This determine which player is shooting
             bool HasShotP2 = (Player.gameObject.name == "Player 2" && ShotHigh);
+             animationState = AnimationState.IDLE;
+            
             if (HasShotP1)
             {
                
@@ -419,6 +433,9 @@ public class Players : MonoBehaviour
             DeadTime2 = Time.fixedTime; //Starts the timer for the bullet 
             ShotLow = true;
             muz = true;
+            animationState = AnimationState.SHOOTLOW;
+            // animationState = AnimationState.IDLE;
+            
         }
         if (Input.GetKeyDown(ShootHigh) && InCover == false && CanShoot && BulletLoaded &&!isPaused)
         {
@@ -429,6 +446,7 @@ public class Players : MonoBehaviour
 
             muz = true;
         }
+        
     }
 
     private void PlayerChoosesRun()
