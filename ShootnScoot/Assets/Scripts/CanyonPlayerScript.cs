@@ -245,7 +245,7 @@ public class CanyonPlayerScript : MonoBehaviour
             if (CoverPosition == 0)
             {
 
-               // Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+              // Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .3f);
                 CanShoot = false;
                 ChooseRun = true;
 
@@ -355,14 +355,14 @@ public class CanyonPlayerScript : MonoBehaviour
         //**********************This moves the player in and out of cover**************************************
         if (Input.GetKeyDown(Peak) && InCover == true && CanShoot && !isPaused)
         {
-           // Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y + .7f);
+           Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y + .3f);
             InCover = false;
             // Debug.Log("test1");
             animationState = AnimationState.IDLE;
         }
         if (Input.GetKeyDown(Duck) && InCover == false && CanShoot && !isPaused)
         {
-           // Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+            Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .3f);
             InCover = true;
             
 
@@ -451,8 +451,10 @@ public class CanyonPlayerScript : MonoBehaviour
             ShotLow = true;
             muz = true;
             animationState = AnimationState.SHOOTLOW;
+            
             GunShot.Play();
             GunSmoke.Play();
+            
             Debug.Log("test");
         }
         if (Input.GetKeyDown(ShootHigh) && InCover == false && CanShoot && BulletLoaded && !isPaused)
