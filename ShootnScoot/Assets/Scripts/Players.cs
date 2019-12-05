@@ -228,28 +228,28 @@ public class Players : MonoBehaviour
                 
                 CanShoot = false;
                 ChooseRun = true;
-                //Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
             }
             else if (CoverPosition == 1)
             {
                 ChooseRun = true;
                 CanShoot = false;
-               // Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
             }
             else if (CoverPosition <= 2)
             {
                 ChooseRun = true;
                 CanShoot = false;
-                //Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
             }
             else if (CoverPosition <= 3)
             {
                 CanShoot = false;
                 ChooseRun = true;
-               // Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
+                Player.transform.position = new Vector2(Player.transform.position.x, Player.transform.position.y - .7f);
 
 
 
