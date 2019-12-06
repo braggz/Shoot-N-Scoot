@@ -107,7 +107,8 @@ public class CanyonPlayerScript : MonoBehaviour
         RUNNING = 2,
         JUMP = 3,
         CROUCH = 4,
-        SHOOTLOW = 5
+        SHOOTLOW = 5,
+        SHOOTHIGH =6,
 
     };
     // Update is called once per frame
@@ -135,6 +136,7 @@ public class CanyonPlayerScript : MonoBehaviour
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isCrouch", false);
                 animator.SetBool("ShootLow", false);
+                animator.SetBool("ShootHigh", false);
                 break;
             case AnimationState.IDLE:
                 animator.SetBool("isIdle", true);
@@ -142,6 +144,7 @@ public class CanyonPlayerScript : MonoBehaviour
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isCrouch", false);
                 animator.SetBool("ShootLow", false);
+                animator.SetBool("ShootHigh", false);
 
                 break;
             case AnimationState.RUNNING:
@@ -150,6 +153,7 @@ public class CanyonPlayerScript : MonoBehaviour
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isCrouch", false);
                 animator.SetBool("ShootLow", false);
+                animator.SetBool("ShootHigh", false);
 
                 break;
             case AnimationState.JUMP:
@@ -158,6 +162,7 @@ public class CanyonPlayerScript : MonoBehaviour
                 animator.SetBool("isJumping", true);
                 animator.SetBool("isCrouch", false);
                 animator.SetBool("ShootLow", false);
+                animator.SetBool("ShootHigh", false);
 
                 break;
             case AnimationState.CROUCH:
@@ -166,6 +171,7 @@ public class CanyonPlayerScript : MonoBehaviour
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isCrouch", true);
                 animator.SetBool("ShootLow", false);
+                animator.SetBool("ShootHigh", false);
                 break;
             case AnimationState.SHOOTLOW:
                 animator.SetBool("isIdle", false);
@@ -173,8 +179,16 @@ public class CanyonPlayerScript : MonoBehaviour
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isCrouch", false);
                 animator.SetBool("ShootLow", true);
+                animator.SetBool("ShootHigh", false);
                 break;
-
+            case AnimationState.SHOOTHIGH:
+                animator.SetBool("isIdle", false);
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isCrouch", false);
+                animator.SetBool("ShootLow", false);
+                animator.SetBool("ShootHigh", true);
+                break;
 
 
             default:
