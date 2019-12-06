@@ -477,7 +477,7 @@ public class CanyonPlayerScript : MonoBehaviour
             DeadTime2 = Time.fixedTime; //Starts the timer for the bullet 
             ShotHigh = true;
 
-            animationState = AnimationState.SHOOTLOW;
+            animationState = AnimationState.SHOOTHIGH;
             muz = true;
             GunShot.Play();
             GunSmoke.Play();
