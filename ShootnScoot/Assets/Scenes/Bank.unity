@@ -8886,7 +8886,11 @@ MonoBehaviour:
   BGMslider: {fileID: 1078486601}
   SFXsoundSelector: 0
   BGMsoundSelector: 0
-  sfxClips: []
+  sfxClips:
+  - {fileID: 8300000, guid: a269707bdd2c3dd489c0d91eeb439636, type: 3}
+  - {fileID: 8300000, guid: fad133b36f0a515488dcdc6759b065a4, type: 3}
+  - {fileID: 8300000, guid: bf20b0f19884718498059f2b5295ede6, type: 3}
+  - {fileID: 8300000, guid: ad0b510ce61e79b42ac0514756d7783c, type: 3}
   sfxAudioSource: {fileID: 61091510}
   sfxVolume: 0.5
   bgmClips:

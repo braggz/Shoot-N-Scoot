@@ -2596,11 +2596,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 6cbda0507b12a7746b29a509caba4dfd,
         type: 3}
-    - target: {fileID: 4360194803546943210, guid: 82a9ea4b0a9921f468ed154713cbf600,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 240
-      objectReference: {fileID: 0}
     - target: {fileID: 4584615655141608087, guid: 82a9ea4b0a9921f468ed154713cbf600,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2611,11 +2606,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -518
       objectReference: {fileID: 0}
-    - target: {fileID: 4360194803965181507, guid: 82a9ea4b0a9921f468ed154713cbf600,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -240
-      objectReference: {fileID: 0}
     - target: {fileID: 4584615655344409863, guid: 82a9ea4b0a9921f468ed154713cbf600,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2625,6 +2615,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 521
+      objectReference: {fileID: 0}
+    - target: {fileID: 4360194803546943210, guid: 82a9ea4b0a9921f468ed154713cbf600,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 4360194803965181507, guid: 82a9ea4b0a9921f468ed154713cbf600,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -240
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82a9ea4b0a9921f468ed154713cbf600, type: 3}
@@ -10625,7 +10625,11 @@ MonoBehaviour:
   BGMslider: {fileID: 1185719596}
   SFXsoundSelector: 0
   BGMsoundSelector: 0
-  sfxClips: []
+  sfxClips:
+  - {fileID: 8300000, guid: a269707bdd2c3dd489c0d91eeb439636, type: 3}
+  - {fileID: 8300000, guid: fad133b36f0a515488dcdc6759b065a4, type: 3}
+  - {fileID: 8300000, guid: bf20b0f19884718498059f2b5295ede6, type: 3}
+  - {fileID: 8300000, guid: ad0b510ce61e79b42ac0514756d7783c, type: 3}
   sfxAudioSource: {fileID: 662645502}
   sfxVolume: 0.5
   bgmClips:
