@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 06a8f48cb2bbfc8448b56daf173235ed
+guid: 62a9359a1c4e3914e9115546806cfcb3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5926721122142426173
-    second: retry_0
+      213: -3324401193036879646
+    second: Red45_0
   - first:
-      213: -9121926155186478418
-    second: retry_1
+      213: 8114228666658934659
+    second: Red45_1
   - first:
-      213: -647622251891082488
-    second: retry_2
+      213: 7977977010842428922
+    second: Red45_2
   - first:
-      213: 5455660020921179197
-    second: retry_3
+      213: -4687719022249865836
+    second: Red45_3
   - first:
-      213: -3228192728186459544
-    second: retry_4
+      213: 2788886041663930556
+    second: Red45_4
   - first:
-      213: 5177500952175716403
-    second: retry_5
+      213: 572666129531336316
+    second: Red45_5
   - first:
-      213: -7830665500609809613
-    second: retry_6
+      213: 2513178010026776632
+    second: Red45_6
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -68,7 +68,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -107,12 +107,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: retry_0
+      name: Red45_0
       rect:
         serializedVersion: 2
         x: 36
         y: 12
-        width: 127
+        width: 113
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -121,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5145ed5007c46d49860d951301be6fa
-      internalID: 5926721122142426173
+      spriteID: 1194231d258410e45aa731c69cb59c19
+      internalID: -3324401193036879646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: retry_1
+      name: Red45_1
       rect:
         serializedVersion: 2
         x: 192
@@ -142,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d45a2881e29087e4594da6c1139550c8
-      internalID: -9121926155186478418
+      spriteID: 41d549deaa62dcb4aa54d0314288598d
+      internalID: 8114228666658934659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: retry_2
+      name: Red45_2
       rect:
         serializedVersion: 2
         x: 348
@@ -163,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 151ff28420bed7f449ea76c1ed9a7205
-      internalID: -647622251891082488
+      spriteID: 343228b61b121214b8e954b2ca2758be
+      internalID: 7977977010842428922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: retry_3
+      name: Red45_3
       rect:
         serializedVersion: 2
         x: 504
@@ -184,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 706152109ea0c704098d4658fe3e26c5
-      internalID: 5455660020921179197
+      spriteID: 455e69ce7b532a8458e0d7fb4908a650
+      internalID: -4687719022249865836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: retry_4
+      name: Red45_4
       rect:
         serializedVersion: 2
         x: 660
@@ -205,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ca036be2df316445873eea8034b58c2
-      internalID: -3228192728186459544
+      spriteID: 7dbfb1be2e4025f409d3133aad821c5e
+      internalID: 2788886041663930556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: retry_5
+      name: Red45_5
       rect:
         serializedVersion: 2
         x: 816
@@ -226,19 +226,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9de98a3e762d7db4b867ccb5b1f77339
-      internalID: 5177500952175716403
+      spriteID: 78ac0bf30b92908488c8efba9090414c
+      internalID: 572666129531336316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: retry_6
+      name: Red45_6
       rect:
         serializedVersion: 2
         x: 972
         y: 12
-        width: 126
+        width: 114
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -247,8 +247,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c595be69b5715d4f927de0a533cbd66
-      internalID: -7830665500609809613
+      spriteID: 66be4fd7070622f41b77a24f014f0b0b
+      internalID: 2513178010026776632
       vertices: []
       indices: 
       edges: []
