@@ -233,6 +233,7 @@ public class Players : MonoBehaviour
             Enemy.GetComponent<Players>().ChooseRun = false;
             Enemy.GetComponent<Players>().jumping = false;
             Enemy.GetComponent<Players>().ChooseJump = false;
+            AudioManager.instance.PlaySFX(2);
         }
         else if (((DeadTime1 - DeadTime2) > BulletMissTime)) //This means the bullet has passed and wont hit the player
         {
@@ -250,6 +251,7 @@ public class Players : MonoBehaviour
             Enemy.GetComponent<Players>().InCover = true;
             Enemy.GetComponent<Players>().ChooseRun = false;
             Enemy.GetComponent<Players>().ChooseJump = false;
+            AudioManager.instance.PlaySFX(2);
 
 
         }
@@ -375,6 +377,7 @@ public class Players : MonoBehaviour
             Debug.Log("reloading complete");
             reloading = false;
             BulletLoaded = true;
+            AudioManager.instance.PlaySFX(1);
         }
 
         
@@ -434,7 +437,7 @@ public class Players : MonoBehaviour
         //***************************This handles whether the player is shooting high or low ****************************************************
         if (Input.GetKeyDown(ShootLow) && InCover == false && CanShoot && BulletLoaded &&!isPaused)
         {
-
+            AudioManager.instance.PlaySFX(0);
             BulletLoaded = false;
             DeadTime2 = Time.fixedTime; //Starts the timer for the bullet 
             ShotLow = true;
@@ -446,7 +449,8 @@ public class Players : MonoBehaviour
             
         }
         if (Input.GetKeyDown(ShootHigh) && InCover == false && CanShoot && BulletLoaded &&!isPaused)
-        { 
+        {
+            AudioManager.instance.PlaySFX(0);
             BulletLoaded = false;
             DeadTime2 = Time.fixedTime; //Starts the timer for the bullet 
             ShotHigh = true;
@@ -550,6 +554,7 @@ public class Players : MonoBehaviour
 
                 ChooseRun = false;
                 animationState = AnimationState.IDLE;
+                AudioManager.instance.PlaySFX(3);
 
 
             }
@@ -707,6 +712,7 @@ public class Players : MonoBehaviour
 
                 ChooseJump = false;
                 animationState = AnimationState.IDLE;
+                AudioManager.instance.PlaySFX(3);
 
 
             }

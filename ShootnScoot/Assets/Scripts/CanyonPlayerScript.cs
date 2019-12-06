@@ -222,6 +222,7 @@ public class CanyonPlayerScript : MonoBehaviour
             Enemy.GetComponent<CanyonPlayerScript>().ChooseRun = false;
             Enemy.GetComponent<CanyonPlayerScript>().jumping = false;
             Enemy.GetComponent<CanyonPlayerScript>().ChooseJump = false;
+            AudioManager.instance.PlaySFX(2);
         }
         else if (((DeadTime1 - DeadTime2) > BulletMissTime)) //This means the bullet has passed and wont hit the player
         {
@@ -239,7 +240,7 @@ public class CanyonPlayerScript : MonoBehaviour
             Enemy.GetComponent<CanyonPlayerScript>().InCover = false;
             Enemy.GetComponent<CanyonPlayerScript>().ChooseRun = false;
             Enemy.GetComponent<CanyonPlayerScript>().ChooseJump = false;
-
+            AudioManager.instance.PlaySFX(2);
 
         }
         else if (((DeadTime1 - DeadTime2) > 0.6f))
@@ -391,6 +392,7 @@ public class CanyonPlayerScript : MonoBehaviour
             Debug.Log("reloading");
             reloading = true;
             rlt2 = Time.fixedTime;
+            AudioManager.instance.PlaySFX(1);
 
         }
 
@@ -470,6 +472,7 @@ public class CanyonPlayerScript : MonoBehaviour
             GunSmoke.Play();
             
             Debug.Log("test");
+            AudioManager.instance.PlaySFX(0);
         }
         if (Input.GetKeyDown(ShootHigh) && InCover == false && CanShoot && BulletLoaded && !isPaused)
         {
@@ -481,6 +484,7 @@ public class CanyonPlayerScript : MonoBehaviour
             muz = true;
             GunShot.Play();
             GunSmoke.Play();
+            AudioManager.instance.PlaySFX(0);
         }
     }
 
@@ -597,6 +601,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
                 ChooseRun = false;
                 animationState = AnimationState.IDLE;
+                AudioManager.instance.PlaySFX(3);
             }
 
         }
@@ -800,7 +805,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
                 ChooseJump = false;
                 animationState = AnimationState.IDLE;
-
+                AudioManager.instance.PlaySFX(3);
             }
 
         }
