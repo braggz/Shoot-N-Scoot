@@ -54,28 +54,28 @@ public class PerkScript : MonoBehaviour
     }
     public void Player1SelectRun()
     {
-        Player1ReloadSpeed = 1;
+        Player1ReloadSpeed = 1f;
         Player1JumpSpeed = .25f;
-        Player1RunSpeed =2f;
+        Player1RunSpeed =.4f;
         
     }
     public void Player2SelectRun()
     {
         Player2ReloadSpeed = 1;
         Player2JumpSpeed = .25f;
-        Player2RunSpeed = 2f;
+        Player2RunSpeed = .4f;
     }
     public void Player1SelectJump()
     {
         Player1ReloadSpeed = 1;
-        Player1JumpSpeed = 2;
+        Player1JumpSpeed = .4f;
         Player1RunSpeed = .25f;
        
     }
     public void Player2SelectJump()
     {
         Player2ReloadSpeed = 1;
-        Player2JumpSpeed = 2f;
+        Player2JumpSpeed = .4f;
         Player2RunSpeed = .25f;
     }
 

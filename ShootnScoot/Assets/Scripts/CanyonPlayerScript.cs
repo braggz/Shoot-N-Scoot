@@ -46,7 +46,7 @@ public class CanyonPlayerScript : MonoBehaviour
     public GameObject Enemy; // Tells who the enemy is
     public GameObject Winner; //The winners platform
     public GameObject Spawn; //Spawn point of players
-    public ParticleSystem GunShot;
+   
     public ParticleSystem GunSmoke;
 
 
@@ -89,9 +89,9 @@ public class CanyonPlayerScript : MonoBehaviour
         hasWon = false;
         animator = GetComponent<Animator>();
         
-        GunShot.Pause();
+        
        GunSmoke.Stop();
-        GunShot.Stop();
+        
         GunSmoke.Clear();
 
 
@@ -423,7 +423,7 @@ public class CanyonPlayerScript : MonoBehaviour
             MuzTime2 = Time.fixedTime; //starts the timer that determines how much time has passed
             muz = false;
             muz2 = true;
-            GunShot.Stop();
+            
             GunSmoke.Stop();
 
         }
@@ -468,7 +468,7 @@ public class CanyonPlayerScript : MonoBehaviour
             muz = true;
             animationState = AnimationState.SHOOTLOW;
             
-            GunShot.Play();
+           
             GunSmoke.Play();
             
             Debug.Log("test");
@@ -482,7 +482,7 @@ public class CanyonPlayerScript : MonoBehaviour
 
             animationState = AnimationState.SHOOTHIGH;
             muz = true;
-            GunShot.Play();
+          
             GunSmoke.Play();
             AudioManager.instance.PlaySFX(0);
         }

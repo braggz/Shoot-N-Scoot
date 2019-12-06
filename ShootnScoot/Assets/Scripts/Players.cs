@@ -32,7 +32,7 @@ public class Players : MonoBehaviour
     public GameObject Jump4;
     public Camera camera;
     public bool hasWon;
-    public ParticleSystem GunShot;
+   
     public ParticleSystem GunSmoke;
 
    
@@ -82,7 +82,7 @@ public class Players : MonoBehaviour
         reloading = false;
         hasWon = false;
         animator = GetComponent<Animator>();
-        GunShot.Pause();
+        
         GunSmoke.Stop();
         GunSmoke.Clear();
       //  GunShot.Clear();
@@ -233,7 +233,9 @@ public class Players : MonoBehaviour
             Enemy.GetComponent<Players>().ChooseRun = false;
             Enemy.GetComponent<Players>().jumping = false;
             Enemy.GetComponent<Players>().ChooseJump = false;
+            ShotLow = false;
             AudioManager.instance.PlaySFX(2);
+           
         }
         else if (((DeadTime1 - DeadTime2) > BulletMissTime)) //This means the bullet has passed and wont hit the player
         {
@@ -248,6 +250,7 @@ public class Players : MonoBehaviour
             Enemy.GetComponent<Players>().CoverPosition = 0;
             Enemy.GetComponent<Players>().jumping = false;
             Enemy.GetComponent<Players>().CanShoot = true;
+            ShotHigh = false;
             Enemy.GetComponent<Players>().InCover = true;
             Enemy.GetComponent<Players>().ChooseRun = false;
             Enemy.GetComponent<Players>().ChooseJump = false;
@@ -395,8 +398,8 @@ public class Players : MonoBehaviour
         {
 
             // MuzzleFlash.SetActive(true);
-            GunShot.Stop();
-            GunSmoke.Stop();
+            
+           
             MuzTime2 = Time.fixedTime; //starts the timer that determines how much time has passed
             muz = false;
             muz2 = true;
@@ -409,7 +412,7 @@ public class Players : MonoBehaviour
             bool HasShotP1 = (Player.gameObject.name == "Player 1" && ShotHigh); //This determine which player is shooting
             bool HasShotP2 = (Player.gameObject.name == "Player 2" && ShotHigh);
              animationState = AnimationState.IDLE;
-            
+            GunSmoke.Stop();
             if (HasShotP1)
             {
                
@@ -443,7 +446,7 @@ public class Players : MonoBehaviour
             ShotLow = true;
             muz = true;
             animationState = AnimationState.SHOOTLOW;
-            GunShot.Play();
+            
             GunSmoke.Play();
             // animationState = AnimationState.IDLE;
             
@@ -455,7 +458,7 @@ public class Players : MonoBehaviour
             DeadTime2 = Time.fixedTime; //Starts the timer for the bullet 
             ShotHigh = true;
             animationState = AnimationState.SHOOTLOW;
-            GunShot.Play();
+            
             GunSmoke.Play();
 
             muz = true;
